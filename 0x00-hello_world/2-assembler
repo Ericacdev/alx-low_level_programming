@@ -1,7 +1,2 @@
 #!/bin/bash
-gcc $CFILE -S#!/bin/bash
-gcc $CFILE -S#!/bin/bash
-gcc $CFILE -S#!/bin/bash
-gcc $CFILE -S#!/bin/bash
-gcc $CFILE -S#!/bin/bash
-gcc $CFILE -S
+gcc -S $CFILE
