@@ -18,7 +18,8 @@ for (i = half / 2; str[i] != '\0'; i++)
 {
 _putchar(str[i]);
 }
-} else if (half % 2)
+}
+else if (half % 2)
 {
 for (n = (half - 1) / 2; n < half - 1; n++)
 {
