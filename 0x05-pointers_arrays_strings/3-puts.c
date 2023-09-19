@@ -18,14 +18,15 @@ void _puts(char *str)
 
 #include "main.h"
 /**
- *swap_int - swaps the values of two integers
- *@a: integer to swap
- *@b: integer to swap
+ *_puts - prints a string to stdout
+ *@str: pointer to the string to print
  */
-void swap_int(int *a, int *b)
+void _puts(char *str)
 {
-int m;	 
-d = *a;
-*a = *b;
-*b = d;
+int i;
+for (i = 0; str[i] != '\0'; i++)
+{
+_putchar(str[i]);
+}
+_putchar('\n');
 }
