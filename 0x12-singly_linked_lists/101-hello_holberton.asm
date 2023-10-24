@@ -1,13 +1,13 @@
 Section .data
 
-	message db "Hello, Holberton", 10
+message db "Hello, Holberton", 10
 
-	Section .text
+Section .text
 
-	global main
+global main
 main:
-	mov rax, 1
-	mov rdi, 1
-	mov rsi, message
-	mov rdx, msglen
-	syscall
+mov rax, 1
+mov rdi, 1
+mov rsi, message
+mov rdx, msglen
+syscall
