@@ -30,7 +30,7 @@ while (av[a])
 {
 while (av[a][m])
 {
-s[p] = av[a][m];
+q[p] = av[a][m];
 p++;
 m++;
 }
