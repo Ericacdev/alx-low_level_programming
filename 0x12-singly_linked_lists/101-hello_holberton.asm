@@ -1,15 +1,13 @@
-section.data
-hello_string db "Hello, Holberton",0
-section .text
-global main
+Section .data
 
-extern printf
+	message db "Hello, Holberton", 10
+
+	Section .text
+
+	global main
 main:
-push rdi;Save registers
-push rsi
-mov rdi,hello_string;Load address of hello_string into rdi
-    call printf;Call printf
-    pop rsi;Restore registers
-    pop rdi
-    xor eax, eax; Return 0
-    ret
+	mov rax, 1
+	mov rdi, 1
+	mov rsi, message
+	mov rdx, msglen
+	syscall
