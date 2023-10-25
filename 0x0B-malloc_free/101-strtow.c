@@ -1,48 +1,44 @@
+#include <stdlib.h>
+#include "main.h"
+
 /**
-* strtow - splits a string into words.
-* @str: string value
-* Return: array of strings (words) or null
-**/
+ * count_word - helper function to count the number of words in a string
+ * @s: string to evaluate
+ *
+ * Return: number of words
+ */
+/**
+ * **strtow - splits a string into words
+ * @str: string  value
+ *
+ * Return: pointer to an array of strings (Success)
+ * or NULL (Error)
+ */
+char **strtow(char *str) {
+    if (str == NULL || *str == '\0') {
+        return NULL;
+    }
 
-char **strtow(char *str)
-{
-	int i, j, k = 0, l, m, counter = 0, len;
-	char **words;
+    int numWords = 0;
+    char **words = NULL;
+    char *count = strtok(str, " ");
 
-	if (str == NULL || str[0] == '\0')
-		return (NULL);
+    while (count != NULL) {
+        numWords++;
+        words = (char **)realloc(words, sizeof(char *) * numWords);
+        if (words == NULL) {
+            return NULL;
+        }
+        words[numWords - 1] = count;
+        count = strtok(NULL, " ");
+    }
 
-	for (i = 0; str[i] != '\0'; i++)
-		if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
-			counter ++;
-	if (counter == 0)
-		return (NULL);
-	words = malloc((count + 1) * sizeof(char *));
-	if (words == NULL)
-	{
-		free(words);
-		return (NULL);
-	}
-	for (i = 0; str[i] != '\0' &&  k < counter; i++)
-	{
-		if (str[i] != ' ')
-		{
-			len = 0;
-			for (j = i; str[j] != ' ' && str[j] != '\0'; j++)
-				len++;
-			words[k] = malloc((len + 1) * sizeof(char));
-			if (words[k] == NULL)
-			{
-				for (m = 0; m < k; m++)
-					free(words[k]);
-				free(words);
-				return (NULL);
-			}
-			for (l = 0; l < len; l++, i++)
-				words[k][l] = str[i];
-			words[k][l] = '\0', k++;
-		}
-	}
-	words[k] = NULL;
-	return (words);
+    numWords++;
+    words = (char **)realloc(words, sizeof(char *) * numWords);
+    if (words == NULL) {
+        return NULL;
+    }
+    words[numWords - 1] = NULL;
+
+    return words;
 }
