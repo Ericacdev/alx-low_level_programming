@@ -59,7 +59,7 @@ void close_file(int fd)
 int main(int argc, char *argv[])
 {
 	int from, to, rd, wr;
-	char * buff;
+	char *buff;
 
 	if (argc != 3)
 	{
