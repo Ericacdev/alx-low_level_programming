@@ -1,13 +1,3 @@
-
-- [ ] Removes trailing white spaces Betty
-:%s/\s\+$//e
-
-
-
-Removes trailing white spaces Betty
-:%s/\s\+$//e
-
-
 #include "main.h"
 #include <stdlib.h>
 
