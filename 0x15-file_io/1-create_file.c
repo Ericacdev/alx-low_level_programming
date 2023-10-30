@@ -1,9 +1,11 @@
 #include "main.h"
 
 /**
- * create_file - Creates a file.
+ *create_file - Creates a file.
  * @filename: name of the file to be created.
  * @text_content: string value
+ *
+ *Description:creates a file using permissions: rw-------
  *
  * Returns: 1 on success, -1 on failure
  */
