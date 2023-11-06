@@ -14,7 +14,7 @@ if (index > 64)
 return (-1);
 
 for (set = 1; index > 0; index--, set *= 2)
-		;
+;
 *n += set;
 return (1);
 }
